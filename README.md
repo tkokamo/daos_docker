@@ -1,4 +1,4 @@
-Standalone DAOS server and client
+dfuse server and client in docker
 
 ### Usage
 
