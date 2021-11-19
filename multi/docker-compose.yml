@@ -1,0 +1,21 @@
+version: "3"
+services:
+  server:
+    image: mdaos
+    #command: ping 127.0.0.1
+    tty: true
+    networks:
+      - internal
+  client:
+    image: mdaos
+    #command: ping 127.0.0.1
+    tty: true
+    networks:
+      - internal
+networks:
+  internal:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.10.0/24
