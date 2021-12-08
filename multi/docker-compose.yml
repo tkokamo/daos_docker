@@ -1,17 +1,26 @@
 version: "3"
 services:
   server:
-    image: mdaos
-    #command: ping 127.0.0.1
+    image: daos_server
     tty: true
     networks:
       - internal
+    volumes:
+      - /dev:/dev
+    cap_add:
+      - SYS_ADMIN
+    privileged: true
   client:
-    image: mdaos
-    #command: ping 127.0.0.1
+    image: daos_client
     tty: true
     networks:
       - internal
+    volumes:
+      - /dev:/dev
+    cap_add:
+      - SYS_ADMIN
+    privileged: true
+
 networks:
   internal:
     driver: bridge

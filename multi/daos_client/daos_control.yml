@@ -1,0 +1,7 @@
+name: daos_server
+port: 10001
+hostlist: ['multi_server_1']
+
+transport_config:
+  allow_insecure: true
+
