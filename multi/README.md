@@ -1,22 +1,29 @@
-1. Build server image 
+1. Build base image
+
+```
+sudo docker build https://github.com/daos-stack/daos.git#release/1.2 \
+        -f utils/docker/Dockerfile.centos.7 -t daos
+```
+
+2. Build server image 
 
 ```
 sudo docker build daos_server/ -t daos_server
 ```
 
-2. Build client image
+3. Build client image
 
 ```
 sudo docker build daos_server/ -t daos_server
 ```
 
-3. Start containers
+4. Start containers
 
 ```
 sudo docker-compose up -d
 ```
 
-3. Login to the client
+5. Login to the client
 
 ```
 sudo docker exec -it multi_client_1 /bin/bash
